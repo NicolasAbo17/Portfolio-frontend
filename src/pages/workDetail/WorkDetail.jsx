@@ -1,12 +1,11 @@
 import React from 'react';
-import { Work } from '../../container';
-import { Footer } from '../../components';
+import { Work, Footer } from '../../container';
 import './WorkDetail.scss';
 
 const WorkDetail = () => (
   <div className="app">
     <Work />
-    <Footer backgroundClass="app__whitebg" />
+    <Footer />
   </div>
 );
 
