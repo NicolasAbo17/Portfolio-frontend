@@ -55,13 +55,18 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['work', 'skills', 'contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {['work', 'skills', 'contact'].map((item) => {
+                if (item !== 'skills' || location.pathname === '/') {
+                  return (
+                    <li key={item}>
+                      <a href={`#${item}`} onClick={() => setToggle(false)}>
+                        {item}
+                      </a>
+                    </li>
+                  );
+                }
+                return null;
+              })}
             </ul>
           </motion.div>
         )}
